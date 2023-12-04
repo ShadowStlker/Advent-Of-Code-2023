@@ -1,3 +1,7 @@
+function D3P2reloadData() {
+    reloadData("D3P2Data")
+  }
+
 function pushArrayItems2D(array2d) {
     let arrayItemList = [[]]
     for (let i = 0; i < array2d.length; i++) {
@@ -171,5 +175,5 @@ function printFileD3P2() {
     let stepOne = setupData(lines);
     let stepTwo = pushArrayItems2D(stepOne);
     let stepThree = checkValidGear(stepTwo);
-    console.log(sumGears(stepThree))
+    printToDom("D3P2", sumGears(stepThree))
 }

@@ -1,3 +1,7 @@
+function D4P2reloadData() {
+    reloadData("D4P2Data")
+  }
+
 function loopOverCardsPartTwo(cards) {
     for (let i = 0; i < cards.length; i++) {
         let points = findWinningNumbers(cards[i])
@@ -21,5 +25,5 @@ function printFileD4P2() {
     let lines = data.split(/\r?\n/);
     let stepOne = dayFourData(lines);
     let stepTwo = loopOverCardsPartTwo(stepOne)
-    console.log(countNumberOfCards(stepTwo))
+    printToDom("D4P2", countNumberOfCards(stepTwo))
 }

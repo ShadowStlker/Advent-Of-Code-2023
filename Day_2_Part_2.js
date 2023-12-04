@@ -1,7 +1,12 @@
 function printFileD2P2(){
     let lines = data.split(/\r?\n/);
-    console.log(findNumbersD2P2(lines));
+    printToDom("D2P2", findNumbersD2P2(lines));
 }
+
+function D2P2reloadData() {
+    reloadData("D2P2Data")
+  }
+
 function getPowerOfSet(data) {
     let power = 0
     for (let i = 0; i < data.length; i++) {
@@ -24,7 +29,6 @@ function getPowerOfSet(data) {
     return power
 }
 function findNumbersD2P2(input) {
-    createData(input)
-    console.log(getPowerOfSet(listOfGames))
-    return("Complete")
+    let listOfGames = createData(input, [])
+    return (getPowerOfSet(listOfGames))
 }

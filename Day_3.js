@@ -1,3 +1,7 @@
+function D3P1reloadData() {
+    reloadData("D3P1Data")
+  }
+
 class arryItem {
     constructor(item, x, y) {
         this.item = item
@@ -125,5 +129,5 @@ function printFileD3P1() {
     let stepTwo = pushArrayItems(stepOne);
     let stepThree = checkValid(stepTwo, stepOne)
     let stepFour = sumItems(stepThree);
-    console.log(stepFour);
+    printToDom("D3P1", stepFour);
 }

@@ -1,3 +1,7 @@
+function D4P1reloadData() {
+    reloadData("D4P1Data")
+  }
+
 class lotterCard {
     constructor(numbers, winningNumbers, copies) {
         this.numbers = numbers
@@ -73,5 +77,5 @@ function printFileD4P1() {
     let lines = data.split(/\r?\n/);
     let stepOne = dayFourData(lines);
     let stepTwo = loopOverCards(stepOne)
-    console.log(stepTwo)
+    printToDom("D4P1", stepTwo)
 }

@@ -1,7 +1,11 @@
 function printFileD2P1(){
     let lines = data.split(/\r?\n/);
-    console.log(findNumbersD2P1(lines));
+    printToDom("D2P1", findNumbersD2P1(lines));
 }
+
+function D2P1reloadData() {
+    reloadData("D2P1Data")
+  }
 
 class ball_game {
 constructor (gameNumber, red, blue, green) {
@@ -12,8 +16,7 @@ constructor (gameNumber, red, blue, green) {
 }
 
 }
-let listOfGames = []
-function createData(input) {
+function createData(input, listOfGames) {
     for (let i = 0; i < input.length; i++) {
     let game = input[i].split(":")
     let draw = game[1].split(";")
@@ -50,6 +53,7 @@ function createData(input) {
             listOfGames[i].green.push(g ? parseInt(g) : 0)
         }
     }
+    return listOfGames
 }
 function checkValidGame(data, r, b, g) {
     let sum = 0
@@ -67,7 +71,6 @@ function checkValidGame(data, r, b, g) {
     return sum
 }
 function findNumbersD2P1(input) {
-    createData(input)
-    console.log(checkValidGame(listOfGames, 12, 14, 13))
-    return("Complete")
+    let listOfGames = createData(input, [])
+    return checkValidGame(listOfGames, 12, 14, 13)
 }

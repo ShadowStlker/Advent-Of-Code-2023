@@ -1,7 +1,10 @@
 function printFileD1P2(){
     let lines = data.split(/\r?\n/);
-    console.log(findNumbersD1P2(lines));
+    printToDom("D1P2", findNumbersD1P2(lines));
 }
+function D1P2reloadData() {
+    reloadData("D1P2Data")
+  }
 const textNumber = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
 function findNumbersD1P2(input) {
     let sum = 0
